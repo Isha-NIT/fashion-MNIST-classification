@@ -1,6 +1,9 @@
 import streamlit as st
 import requests
+import os
 from PIL import Image
+
+BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
 
 st.set_page_config(page_title = "Fashion MNSIT Classifier", layout="centered")
 st.title("Fashion-MNIST Image Classifier")
@@ -16,7 +19,7 @@ if uploaded_file is not None:
             files = {"file": uploaded_file.getvalue()}
 
             response = requests.post(
-                "http://backend:8000/predict",
+                f"{BACKEND_URL}/predict",
                 files = files
             )
 
