@@ -14,7 +14,7 @@ COPY . .
 
 # Expose Streamlit default port
 # Expose Streamlit default port
-EXPOSE 8501
+EXPOSE 7860
 
 # Command to run Streamlit
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.enableXsrfProtection=false", "--server.enableCORS=false"]
+CMD ["streamlit", "run", "app.py", "--server.port=7860", "--server.address=0.0.0.0", "--server.enableXsrfProtection=false", "--server.enableCORS=false"]
