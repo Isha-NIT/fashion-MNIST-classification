@@ -16,7 +16,7 @@ if uploaded_file is not None:
     st.image(image, use_column_width=True)
     if st.button("Predict"):
         with st.spinner("Predicting..."):
-            files = {"file": uploaded_file.getvalue()}
+            files = {"file": ("image.png", uploaded_file.getvalue(), "image/png")}
 
             response = requests.post(
                 f"{BACKEND_URL}/predict",

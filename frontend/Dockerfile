@@ -7,7 +7,7 @@ WORKDIR /app
 # Copy frontend requirements and install
 COPY requirements.txt .
 RUN pip install --upgrade pip
-RUN pip install --timeout 1000 --retries 20 -i https://pypi.org/simple -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Copy all frontend files
 COPY . .
