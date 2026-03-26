@@ -3,7 +3,7 @@ import requests
 import os
 from PIL import Image
 
-BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
+BACKEND_URL = os.getenv("BACKEND_URL", "https://ishaks2005-fashion-mnist.hf.space")
 
 st.set_page_config(page_title = "Fashion MNSIT Classifier", layout="centered")
 st.title("Fashion-MNIST Image Classifier")
