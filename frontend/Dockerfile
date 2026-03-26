@@ -7,8 +7,7 @@ WORKDIR /app
 # Copy frontend requirements and install
 COPY requirements.txt .
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
-
+RUN pip install --no-cache-dir -r requirements.txt
 # Copy all frontend files
 COPY . .
 
@@ -17,4 +16,4 @@ COPY . .
 EXPOSE 7860
 
 # Command to run Streamlit
-CMD ["streamlit", "run", "app.py", "--server.port=7860", "--server.address=0.0.0.0", "--server.enableXsrfProtection=false", "--server.enableCORS=false"]
+CMD ["streamlit", "run", "app.py", "--server.port=7860", "--server.address=0.0.0.0", "--server.enableXsrfProtection=false"]
